@@ -5,6 +5,7 @@
     <meta charset= 'UTF-8'/>
 </head>
 <body>
+   
 <script>
 function computerPlay() {
     
@@ -19,47 +20,100 @@ function computerPlay() {
     }
 }
 
+//function playerPlay() {
+    
+ //   let x = Math.floor(Math.random() * 3)
+    
+  //  if (x == 0) {
+  //      return 'rock'
+ //   } else if (x == 1) {
+ //       return 'paper'
+ //  } else {
+  //     return 'scissor'
+  //  }
+//}
+
+
+
+
+
+
+
+let x = 0;
+let y = 0;
+
 
 
 function playRound(playerSelection, computerSelection) {
+
     if (playerSelection == 'rock' && computerSelection == 'paper') {
-        return "You Lose! Paper beats Rock"
+        return "You Lose! Paper beats Rock";
+        
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-    return "You Win! Paper beats Rock"
+    return "You Win! Paper beats Rock";
+        
     } else if (playerSelection == 'rock' && computerSelection == 'scissor') {
-    return "You Win! Rock beats Scissor"
+    return "You Win! Rock beats Scissor";
+        
     } else if (playerSelection == 'scissor' && computerSelection == 'rock') {
-    return "You Lose! Rock beats Scissor"
+    return "You Lose! Rock beats Scissor";
+        
     } else if (playerSelection == 'paper' && computerSelection == 'scissor') {
-    return "You Lose! Scissor beats Paper"
+    return "You Lose! Scissor beats Paper";
+        
     } else if (playerSelection == 'scissor' && computerSelection == 'paper') {
-    return "You Win! Scissors beats Paper"
+    return "You Win! Scissors beats Paper";
+        
     } else if (playerSelection == computerSelection) {
         return 'draw'
     }
 
 }
 
-let playerSelection = prompt('Rock, Paper, or Scissor?').toLowerCase()
 
 
 
-const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))
+
+
+function game(playerSelection, computerSelection) {
+    
+
+    if (playRound(playerSelection, computerSelection) == "You Lose! Paper beats Rock" || playRound(playerSelection, computerSelection) == "You Lose! Rock beats Scissor" || playRound(playerSelection, computerSelection) == "You Lose! Scissors beats Paper") {
+        
+        x++
+        return 'Computer score: ' + x + ' Player Score: ' + y
+    
+    } else if (playRound(playerSelection, computerSelection) == "You Win! Paper beats Rock" || playRound(playerSelection, computerSelection) == "You Win! Rock beats Scissor" || playRound(playerSelection, computerSelection) == "You Win! Scissors beats Paper") {
+        
+        y++
+        return 'Computer score: ' + x + ' Player Score: ' + y
+
+    }  else if (playRound(playerSelection, computerSelection) == 'draw') {
+        
+        x += 0
+        return 'Computer score: ' + x + ' Player Score: ' + y
+    }
+}
+
+for (x==0 && y == x; x<3 && y<3;) {
+    let playerSelection = prompt('Rock, Paper, or Scissor?').toLowerCase()
+    const computerSelection = computerPlay()
+    playRound(playerSelection, computerSelection)
+    console.log(playRound(playerSelection, computerSelection))
+    console.log('You chose: ' + playerSelection, ';Computer chose: ' + computerSelection)
+    console.log(game(playerSelection, computerSelection))
+
+    
+}
 
 
 
-//function game() {
-//    playRound()
-//    if 
-//    playRound()
-//    playRound()
-//    playRound()
-//    playRound()
 
 
-//}
+//console.log(game())
 
+//console.log('You chose: ' + playerSelection, ';Computer chose: ' + computerSelection)
+//console.log(playRound(playerSelection, computerSelection))
 
 
 </script>
